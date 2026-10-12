@@ -13,6 +13,7 @@ Ce dépôt contient l’ensemble du travail réalisé en tant que **Consultant D
 - [Contexte & objectifs](#-contexte)
 - [Jeux de données](#-jeux-de-données)
 - [Approche](#-approche)
+- [Dashboard Power BI](#-dashboard)
 - [Structure du dépôt](#️-structure-du-dépôt)
 - [Mise en place du modèle](#-mise-en-place-du-modèle)
 - [API(FastAPI)](#-api-fastapi-api)
@@ -78,6 +79,37 @@ Fichier aligné pour l’inférence : `data/processed/df_central_norm.csv`
 - **Qualité** : Pytest + couverture, règles de branche et PR.
 
 ---
+<a id="-dashboard"></a>
+
+## Dashboard Power BI
+
+Un tableau de bord Power BI en quatre pages complète l'analyse : vue d'ensemble des effectifs, démographie, suivi de la performance individuelle et analyse de l'attrition.
+
+### Vue d'ensemble
+
+Effectifs totaux, actifs/inactifs, taux d'attrition global (16,1 %), embauches par année et répartition des employés actifs par département et par poste.
+
+![Dashboard – Vue d'ensemble](docs/images/dashboard_overview.webp)
+
+### Démographie
+
+Répartition des employés par âge, genre, statut marital et origine ethnique, avec le salaire moyen par groupe.
+
+![Dashboard – Démographie](docs/images/dashboard_demographics.webp)
+
+### Suivi de la performance
+
+Évolution par employé de la satisfaction (poste, relations, environnement), de l'équilibre vie pro/perso et des évaluations (auto-évaluation et note du manager).
+
+![Dashboard – Suivi de la performance](docs/images/dashboard_performance.webp)
+
+### Attrition
+
+Taux d'attrition par département et poste, fréquence des déplacements, heures supplémentaires, année d'embauche et ancienneté.
+
+![Dashboard – Attrition](docs/images/dashboard_attrition.webp)
+
+---
 <a id="-structure-du-dépôt"></a>
 
 ## Structure du dépôt
@@ -100,6 +132,7 @@ Fichier aligné pour l’inférence : `data/processed/df_central_norm.csv`
 │   ├── attrition_local.session.sql    # schémas hr_staging/hr/ml + indexes + logs
 │   ├── create_db.py                   # création table + exemple
 │   └── load_csv.py                    # chargement CSV → hr.employees
+├── docs/images/               # captures du dashboard Power BI
 ├── notebooks/
 │   ├── 01_analyse_exploratoire.ipynb
 │   ├── 02_preprocessing.ipynb
